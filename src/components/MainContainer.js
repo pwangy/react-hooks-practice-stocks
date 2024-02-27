@@ -6,7 +6,7 @@ import SearchBar from './SearchBar'
 const MainContainer = () => {
   const [stocks, setStocks] = useState([])
   const [portfolio, setPortfolio] = useState([])
-  const [error, setError] = useSTate('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     // (() => { //these should be used when multiple things happen in useEffect
@@ -23,10 +23,11 @@ const MainContainer = () => {
   }, [])
 
   const handlePortfolio = (stockToWorkOn, num) => {
-    if (num {
+    if (num) {
       const inList = portfolio.find(stock => stock.id === stockToWorkOn.id)
       return inList ? null : setPortfolio(currentPortfolio => [...currentPortfolio, stockToWorkOn])
-    } else {
+    } 
+    else {
       setPortfolio(currentPortfolio => currentPortfolio.filter(stock => stock.id !== stockToWorkOn.id))
   }}
   
@@ -46,3 +47,13 @@ const MainContainer = () => {
 )}
 
 export default MainContainer
+
+// After the stocks are fetched, your job is to:
+// x Render all the stocks onto the page. The styling of how a Stock should look like is already in the Stock component.
+// x Allow a user to buy a stock by clicking on it and when it is bought, it should be added to MyPortfolio.
+// x Allow a user to sell a stock in their Portfolio by clicking on the stock and it should be removed from their Portfolio.
+
+
+// Allow a user to sort the list of stocks alphabetically by the ticker name as well as by ascending price.
+
+// Allow a user to filter stocks based on the type of the stock.

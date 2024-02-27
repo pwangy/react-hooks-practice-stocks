@@ -1,6 +1,6 @@
 const Stock = ({ id, ticker, name, type, price, onClick, actionNumber }) => {
 	return (
-		<div onClick={() => onclick({ id, ticker, name, type, price }, actionNumber)}>
+		<div onClick={() => onClick({ id, ticker, name, type, price }, actionNumber)}>
 			<div className='card'>
 				<div className='card-body'>
 					<h5 className='card-title'>{name}</h5>
